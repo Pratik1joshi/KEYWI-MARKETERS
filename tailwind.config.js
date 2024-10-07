@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      rotate: {
+        'y-180': '180deg',
+        'x-180':'180deg',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
