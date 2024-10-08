@@ -1,26 +1,17 @@
 "use client"
 import React, { useState } from 'react'; // Added useState import
-
-
+import Link from 'next/link'; // Import Link from next/link
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
-
-    // const toggleMenu = () => {
-    //     setIsMenuOpen(!isMenuOpen); // Toggle menu visibility
-    // };
-    // gsap.registerPlugin(useGSAP);
-
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-
-
     return (
         <nav className="fixed top-0 left-0 w-full bg-white shadow-lg rounded-lg z-20"> {/* Added fixed positioning */}
-            <div className="flex justify-between items-center py-8 px-10"> {/* Reduced padding for small screens */}
+            <div className="flex justify-between items-center py-6 px-10"> {/* Reduced padding for small screens */}
                 <div className="text-3xl lg:ms-28 font-bold tracking-wider flex justify-center items-center gap-2">
                     <div>KEYWI</div> <div className='text-[#51C4EE]'>MARKETERS</div>
                 </div>
@@ -38,13 +29,13 @@ const Navbar = () => {
                     </button>
                 </div>
 
-                <div className={`coffee absolute top-20 w-auto right-0  bg-white shadow-lg px-12 p-4 flex flex-col gap-8 items-center justify-center transition ease-in-out duration-500 rounded-lg z-10 ${isMenuOpen ? 'block' : 'hidden'} lg:static lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 lg:p-0 lg:shadow-none`}>
-                    <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Home</a>
-                    <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">About</a>
-                    <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Services</a>
-                    <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Portfolio</a>
-                    <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Packages</a>
-                    <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Contact Us</a>
+                <div className={`coffee absolute top-20 w-auto right-0 bg-white shadow-lg px-12 p-4 flex flex-col gap-8 items-center justify-center transition ease-in-out duration-500 rounded-lg z-10 ${isMenuOpen ? 'block' : 'hidden'} lg:static lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 lg:p-0 lg:shadow-none`}>
+                    <Link href="/" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Home</Link>
+                    <Link href="#about" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">About</Link>
+                    <Link href="#services" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Services</Link>
+                    <Link href="#portfolio" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Portfolio</Link>
+                    <Link href="/package" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Packages</Link>
+                    <Link href="#contact" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Contact Us</Link>
                 </div>
             </div>
         </nav>
