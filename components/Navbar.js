@@ -1,15 +1,25 @@
 "use client"
-import React, { useState } from 'react' // Added useState import
+import React, { useState } from 'react'; // Added useState import
+
+
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
 
+    // const toggleMenu = () => {
+    //     setIsMenuOpen(!isMenuOpen); // Toggle menu visibility
+    // };
+    // gsap.registerPlugin(useGSAP);
+
+
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen); // Toggle menu visibility
+        setIsMenuOpen(!isMenuOpen);
     };
 
+
+
     return (
-        <nav className="bg-white shadow-lg rounded-lg"> {/* Added background, shadow, and border-radius */}
+        <nav className="fixed top-0 left-0 w-full bg-white shadow-lg rounded-lg z-20"> {/* Added fixed positioning */}
             <div className="flex justify-between items-center py-8 px-10"> {/* Reduced padding for small screens */}
                 <div className="text-3xl lg:ms-28 font-bold tracking-wider flex justify-center items-center gap-2">
                     <div>KEYWI</div> <div className='text-[#51C4EE]'>MARKETERS</div>
@@ -28,12 +38,12 @@ const Navbar = () => {
                     </button>
                 </div>
 
-                <div className={`absolute top-16 w-auto right-0  bg-white shadow-lg px-12 p-4 flex flex-col gap-8 items-end justify-center transition ease-in-out duration-500 rounded-lg z-10 ${isMenuOpen ? 'block' : 'hidden'} lg:static lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 lg:p-0 lg:shadow-none`}>
+                <div className={`coffee absolute top-20 w-auto right-0  bg-white shadow-lg px-12 p-4 flex flex-col gap-8 items-center justify-center transition ease-in-out duration-500 rounded-lg z-10 ${isMenuOpen ? 'block' : 'hidden'} lg:static lg:flex lg:flex-row lg:justify-end lg:items-center lg:gap-8 lg:p-0 lg:shadow-none`}>
                     <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Home</a>
                     <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">About</a>
                     <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Services</a>
                     <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Portfolio</a>
-                    <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Projects</a>
+                    <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Packages</a>
                     <a href="#" className="block lg:inline-block text-center lg:text-left border-transparent border-b-2 lg:border-transparent hover:border-[#51C4EE] hover:text-[#51C4EE] transition duration-300">Contact Us</a>
                 </div>
             </div>

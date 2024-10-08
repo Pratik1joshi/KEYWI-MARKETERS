@@ -2,14 +2,14 @@
 import React, { useState } from 'react'; // Added useState import
 
 const Services = () => {
-    
+
 
     return (
         <section className="text-gray-600 body-font">
-            <div className="container px-5 py-24 mx-auto">
-                <div className="flex flex-wrap w-full mb-20 flex-col items-start justify-start">
-                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Our Services</h1>
-                    <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">At Keywi Marketers, we provide a comprehensive range of marketing solutions tailored to meet the unique needs of your business.</p>
+            <div className="container lg:px-32 px-5 py-24 mx-auto">
+                <div className="flex flex-wrap w-full mb-20 flex-col items-start justify-start ">
+                    <h1 className="sm:text-3xl text-2xl lg:text-5xl font-bold title-font mb-2 text-gray-900">Our Services</h1>
+                    <p className="lg:w-full w-full leading-relaxed text-gray-500">At Keywi Marketers, we provide a comprehensive range of marketing solutions tailored to meet the unique needs of your business.</p>
                 </div>
                 <div className="flex flex-wrap -m-4">
                     {servicesData.map((service, index) => { // Loop through services data
@@ -23,7 +23,12 @@ const Services = () => {
                                     <h2 className="text-lg text-gray-900 font-medium title-font mb-2">{service.title}</h2>
                                     <p className="leading-relaxed text-base">{service.description}</p>
                                     <button onClick={() => setIsExpanded(!isExpanded)} className="mt-4 text-indigo-500">
-                                        {isExpanded ? 'Collapse' : 'Expand'}
+                                        {isExpanded ? (
+                                            <svg width={20} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(81,196,238,1)"><path d="M12 8.36853L20.9679 13.1162L20.0321 14.8838L12 10.6315L3.96788 14.8838L3.0321 13.1162L12 8.36853Z"></path></svg>
+                                        ) : (
+                                            
+                                            <svg width={20} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(81,196,238,1)"><path d="M12 15.6315L20.9679 10.8838L20.0321 9.11619L12 13.3685L3.96788 9.11619L3.0321 10.8838L12 15.6315Z"></path></svg>
+                                        )}
                                     </button>
                                     {isExpanded && ( // Conditionally render extra paragraph
                                         <p className="mt-2 text-gray-500" dangerouslySetInnerHTML={{ __html: service.extraInfo }} />
@@ -96,11 +101,11 @@ const servicesData = [
     },
     {
         title: "Affordable and Flexible Packages",
-        icon:  <svg width={35} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(81,196,238,1)"><path d="M20 3L22 7V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V7.00353L4 3H20ZM20 9H4V19H20V9ZM12 10L16 14H13V18H11V14H8L12 10ZM18.764 5H5.236L4.237 7H19.764L18.764 5Z"></path></svg>,
+        icon: <svg width={35} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(81,196,238,1)"><path d="M20 3L22 7V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V7.00353L4 3H20ZM20 9H4V19H20V9ZM12 10L16 14H13V18H11V14H8L12 10ZM18.764 5H5.236L4.237 7H19.764L18.764 5Z"></path></svg>,
         description: "At Keywi Marketers, we understand that every business has different needs and budgets. We offer flexible and affordable packages that deliver high value and results, without compromising on quality.",
         extraInfo: "Why we’re the best:<br>● Tailored solutions for every budget<br>● No compromise on quality, regardless of package size<br>● Transparent pricing and flexible options"
     }
-    
+
 ];
 
 export default Services;
