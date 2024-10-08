@@ -1,11 +1,11 @@
 'use client';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        message: ''
+        message: '',
     });
 
     const [loading, setLoading] = useState(false);
@@ -15,7 +15,7 @@ const Contact = () => {
     const handleChange = (e) => {
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         });
     };
 
@@ -48,12 +48,22 @@ const Contact = () => {
         }
     };
 
-
     return (
         <section id='contact' className="text-gray-600 px-14 body-font relative">
             <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
                 <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-                    <iframe width="100%" height="100%" className="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1082868073436!2d85.31139047509384!3d27.71394267617877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18fd7f4fbae7%3A0x8713d1151e276d79!2sTridevi%20Sadak%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1728371771578!5m2!1sen!2snp" style={{ filter: 'grayscale(0.5) contrast(1) opacity(0.6)' }}></iframe>
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        className="absolute inset-0"
+                        frameBorder="0"
+                        title="map"
+                        marginHeight="0"
+                        marginWidth="0"
+                        scrolling="no"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1082868073436!2d85.31139047509384!3d27.71394267617877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18fd7f4fbae7%3A0x8713d1151e276d79!2sTridevi%20Sadak%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1728371771578!5m2!1sen!2snp"
+                        style={{ filter: 'grayscale(0.5) contrast(1) opacity(0.6)' }}
+                    ></iframe>
                     <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
                         <div className="lg:w-1/2 px-6">
                             <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
@@ -61,8 +71,7 @@ const Contact = () => {
                         </div>
                         <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                             <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
-                            <a className="text-indigo-500 leading-relaxed">keywimarketers@gmail.com
-                            </a>
+                            <a className="text-indigo-500 leading-relaxed">keywimarketers@gmail.com</a>
                             <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
                             <p className="leading-relaxed">9801012409 <br />9761619636</p>
                         </div>
@@ -122,7 +131,7 @@ const Contact = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;
