@@ -32,8 +32,8 @@ export default function RootLayout({ children }) {
         <div className="mt-20">
         {children}
         </div>
-        <About/>
-        <Services/>
+        {/* <About/>
+        <Services/> */}
         <Contact/>
         <Footer/>
       </body>

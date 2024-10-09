@@ -4,11 +4,11 @@ const page = () => {
     return (
         <section className="text-gray-800 body-font overflow-hidden">
             <div className="container px-5 py-10 mx-auto flex flex-col gap-10">
-                <h1 className='lg:text-5xl font-bold md:text-5xl md:py-4 py-6 text-4xl lg:py-2 lg:px-28'>Portfolio</h1>
+                <h1 className='lg:text-5xl font-bold md:text-5xl md:py-4 py-4 text-4xl lg:py-2 lg:px-28'>Portfolio</h1>
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                    <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-52 object-cover object-center rounded" src="/hero1.png" />
+                    <img alt="ecommerce" className="lg:w-1/2 w-4/5 lg:h-auto h-72 lg:-mt-10 object-cover object-center rounded" src="/whyus.png" />
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                        <h2 className='text-2xl font-bold sm:text-3xl py-10'>Why <span className='text-[#51C4EE]'>Us</span></h2>
+                        <h2 className='text-2xl font-bold sm:text-2xl py-10'>Why Keywi <span className='text-[#51C4EE]'>Marketers?</span></h2>
                         <p>Keywi Marketers is your trusted partner for tailored, results-driven marketing solutions. We offer a wide range of services, from web development to social media management and influencer marketing, all designed to meet your unique business goals. With flexible, budget-friendly packages, we deliver maximum value without compromising quality. At Keywi Marketers, we combine creativity and strategy to connect with your audience and drive real growth. Let us help you unlock new opportunities and elevate your brand</p>
                     </div>
                 </div>

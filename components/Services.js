@@ -1,11 +1,54 @@
 "use client"
-import React, { useState } from 'react'; // Added useState import
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useRef, useState } from 'react'; // Added useState import
 
+gsap.registerPlugin(ScrollTrigger);
 const Services = () => {
 
+    const boxRef = useRef();
+
+    useGSAP(() => {
+        const lines = boxRef.current.querySelectorAll('.lines');
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: boxRef.current,
+                start: 'top 65%',
+                end: 'top 0%',
+                // toggleActions: 'play none none none',
+                markers: false,
+                scrub: 2
+            },
+        })
+
+        tl2.from(boxRef.current.querySelectorAll("h1"), {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            delay: 0.5,
+            ease: "power2.inOut"
+        })
+
+        tl2.from(boxRef.current.querySelectorAll("img"), {
+            opacity: 0,
+            y: 80,
+            duration: 1,
+            ease: 'power2.out'
+        }, "aboutSec")
+
+        tl2.from(lines, {
+
+            opacity: 0,
+            y: 30,     // Move the text slightly up while fading in
+            duration: 1,
+            stagger: 0.2, // Stagger animation of each line
+            ease: 'power2.out'
+        }, "aboutSec");
+    })
 
     return (
-        <section id='services' className="text-gray-600 body-font">
+        <section ref={boxRef} id='services' className="text-gray-600 body-font">
             <div className="container lg:px-32 px-5 py-24 mx-auto">
                 <div className="flex flex-wrap w-full mb-20 flex-col items-start justify-start ">
                     <h1 className="sm:text-5xl text-4xl lg:text-5xl font-bold title-font mb-2 text-gray-900">Our <span className='text-[#51C4EE]'>Services</span></h1>
@@ -26,7 +69,7 @@ const Services = () => {
                                         {isExpanded ? (
                                             <svg width={20} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(81,196,238,1)"><path d="M12 8.36853L20.9679 13.1162L20.0321 14.8838L12 10.6315L3.96788 14.8838L3.0321 13.1162L12 8.36853Z"></path></svg>
                                         ) : (
-                                            
+
                                             <svg width={20} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(81,196,238,1)"><path d="M12 15.6315L20.9679 10.8838L20.0321 9.11619L12 13.3685L3.96788 9.11619L3.0321 10.8838L12 15.6315Z"></path></svg>
                                         )}
                                     </button>
