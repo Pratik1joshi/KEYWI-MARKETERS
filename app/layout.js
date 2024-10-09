@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
+import About from "@/components/About";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <div className="mt-20">
         {children}
         </div>
+        <About/>
         <Services/>
         <Contact/>
         <Footer/>

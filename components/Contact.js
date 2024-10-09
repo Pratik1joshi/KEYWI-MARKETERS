@@ -39,12 +39,18 @@ const Contact = () => {
 
             if (result.success) {
                 setSuccess(true);
+                // Remove success message after 3 seconds
+                setTimeout(() => setSuccess(false), 3000);
             } else {
                 setError(true);
+                // Remove error message after 3 seconds
+                setTimeout(() => setError(false), 3000);
             }
         } catch (err) {
             setLoading(false);
             setError(true);
+            // Remove error message after 3 seconds
+            setTimeout(() => setError(false), 3000);
         }
     };
 
@@ -71,14 +77,14 @@ const Contact = () => {
                         </div>
                         <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                             <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
-                            <a className="text-indigo-500 leading-relaxed">keywimarketers@gmail.com</a>
+                            <a className="text-[#51C4EE] leading-relaxed">keywimarketers@gmail.com</a>
                             <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
                             <p className="leading-relaxed">9801012409 <br />9761619636</p>
                         </div>
                     </div>
                 </div>
                 <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-                    <h2 className="text-gray-700 lg:text-5xl mb-5 font-bold title-font">CONTACT US</h2>
+                    <h2 className="text-gray-700 text-4xl sm:text-5xl lg:text-5xl mb-5 font-bold title-font">CONTACT <span className='text-[#51C4EE]'>US</span></h2>
                     <p className="leading-relaxed mb-5 text-gray-600">Let's Talk</p>
 
                     <form onSubmit={handleSubmit}>
@@ -90,7 +96,7 @@ const Contact = () => {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                className="w-full bg-white rounded border border-gray-300 focus:border-[#51C4EE] focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                                 required
                             />
                         </div>
@@ -102,7 +108,7 @@ const Contact = () => {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                className="w-full bg-white rounded border border-gray-300 focus:border-[#51C4EE] focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                                 required
                             />
                         </div>
@@ -113,21 +119,24 @@ const Contact = () => {
                                 name="message"
                                 value={formData.message}
                                 onChange={handleChange}
-                                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                                className="w-full bg-white rounded border border-gray-300 focus:border-[#51C4EE] focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                                 required
                             />
                         </div>
-                        <button
-                            type="submit"
-                            className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-                            disabled={loading}
-                        >
-                            {loading ? 'Sending...' : 'Send'}
-                        </button>
+                        <div className='flex flex-col sm:gap-4 sm:flex-row'>
+
+                            <button
+                                type="submit"
+                                className="text-white bg-[#51C4EE] border-2 border-transparent py-2 px-6 focus:outline-none hover:border-[#51C4EE] hover:text-gray-600 hover:bg-[#ffffff] rounded text-lg"
+                                disabled={loading}
+                            >
+                                {loading ? 'Sending...' : 'Send'}
+                            </button>
+                            {success && <p className="text-green-500 mt-4">Your message has been sent!</p>}
+                            {error && <p className="text-red-500 mt-4">Failed to send message.</p>}
+                        </div>
                     </form>
 
-                    {success && <p className="text-green-500 mt-4">Your message has been sent!</p>}
-                    {error && <p className="text-red-500 mt-4">Failed to send message. Please try again later.</p>}
                 </div>
             </div>
         </section>

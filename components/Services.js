@@ -8,7 +8,7 @@ const Services = () => {
         <section id='services' className="text-gray-600 body-font">
             <div className="container lg:px-32 px-5 py-24 mx-auto">
                 <div className="flex flex-wrap w-full mb-20 flex-col items-start justify-start ">
-                    <h1 className="sm:text-3xl text-2xl lg:text-5xl font-bold title-font mb-2 text-gray-900">Our Services</h1>
+                    <h1 className="sm:text-5xl text-4xl lg:text-5xl font-bold title-font mb-2 text-gray-900">Our <span className='text-[#51C4EE]'>Services</span></h1>
                     <p className="lg:w-full w-full leading-relaxed text-gray-500">At Keywi Marketers, we provide a comprehensive range of marketing solutions tailored to meet the unique needs of your business.</p>
                 </div>
                 <div className="flex flex-wrap -m-4">
