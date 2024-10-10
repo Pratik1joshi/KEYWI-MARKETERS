@@ -10,55 +10,57 @@ const Services = () => {
     const boxRef = useRef();
 
     useGSAP(() => {
-        const lines = boxRef.current.querySelectorAll('.lines');
+        const divs = boxRef.current.querySelectorAll('.mainDiv');
         const tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: boxRef.current,
                 start: 'top 65%',
-                end: 'top 0%',
-                // toggleActions: 'play none none none',
+                end: 'top -100%',
                 markers: false,
+                once:true,
                 scrub: 2
             },
         })
 
-        tl2.from(boxRef.current.querySelectorAll("h1"), {
+        tl2.from(boxRef.current.querySelectorAll(".service-heading"), {
             opacity: 0,
             y: 30,
             duration: 0.8,
             delay: 0.5,
+            stagger:1,
             ease: "power2.inOut"
         })
 
-        tl2.from(boxRef.current.querySelectorAll("img"), {
+        tl2.from(divs, {
             opacity: 0,
-            y: 80,
-            duration: 1,
+            x: -200,
+            duration: 2,
+            stagger:2,
             ease: 'power2.out'
-        }, "aboutSec")
+        })
 
-        tl2.from(lines, {
+        // tl2.from(lines, {
 
-            opacity: 0,
-            y: 30,     // Move the text slightly up while fading in
-            duration: 1,
-            stagger: 0.2, // Stagger animation of each line
-            ease: 'power2.out'
-        }, "aboutSec");
+        //     opacity: 0,
+        //     y: 30,     // Move the text slightly up while fading in
+        //     duration: 1,
+        //     stagger: 0.2, // Stagger animation of each line
+        //     ease: 'power2.out'
+        // });
     })
 
     return (
         <section ref={boxRef} id='services' className="text-gray-600 body-font">
-            <div className="container lg:px-32 px-5 py-24 mx-auto">
+            <div className="container lg:px-32 px-5 py-14 mx-auto">
                 <div className="flex flex-wrap w-full mb-20 flex-col items-start justify-start ">
-                    <h1 className="sm:text-5xl text-4xl lg:text-5xl font-bold title-font mb-2 text-gray-900">Our <span className='text-[#51C4EE]'>Services</span></h1>
-                    <p className="lg:w-full w-full leading-relaxed text-gray-500">At Keywi Marketers, we provide a comprehensive range of marketing solutions tailored to meet the unique needs of your business.</p>
+                    <h1 className="service-heading sm:text-5xl text-4xl lg:text-5xl font-bold title-font mb-2 text-gray-900">Our <span className='text-[#51C4EE]'>Services</span></h1>
+                    <p className="service-heading lg:w-full w-full leading-relaxed text-gray-500">At Keywi Marketers, we provide a comprehensive range of marketing solutions tailored to meet the unique needs of your business.</p>
                 </div>
                 <div className="flex flex-wrap -m-4">
                     {servicesData.map((service, index) => { // Loop through services data
                         const [isExpanded, setIsExpanded] = useState(false); // State for expansion
                         return (
-                            <div className="xl:w-1/3 md:w-1/2 p-4" key={index}>
+                            <div className="mainDiv xl:w-1/3 md:w-1/2 p-4" key={index}>
                                 <div className="border border-gray-200 p-6 rounded-lg group hover:shadow-lg transition duration-300 ease-in-out"> {/* Added group class */}
                                     <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-[#51C4EE] mb-4 transition duration-300 ease-in-out group-hover:border-2 group-hover:bg-white group-hover:border-[#51C4EE] group-hover:rounded-full"> {/* Added hover border classes */}
                                         {service.icon}

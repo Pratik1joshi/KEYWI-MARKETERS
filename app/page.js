@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import Link from 'next/link'; // Import Link from next/link
 import About from '@/components/About';
 import Services from '@/components/Services';
-import { useGSAP } from '@gsap/react';
+import { useGSAP } from '@gsap/react';  
 import tl from '@/libs/animation';
 
 const Page = () => {
@@ -15,12 +15,14 @@ const Page = () => {
             opacity: 0,
             duration: 0.7,
             stagger: 0.1,
+            oggleActions: "play none none none",
             ease: "power2.inOut",
         },"hero");
         tl.from(container.current.querySelectorAll('.buttons'),{
           opacity:0,
           duration:0.7,
           ease:"power2.inOut",
+          oggleActions: "play none none none",
           stagger:0.1,
         })
         tl.from(container.current.querySelectorAll("img"),{
@@ -28,6 +30,7 @@ const Page = () => {
           opacity:0,
           duration:0.7,
           ease:"power2.inOut",
+          oggleActions: "play none none none",
         },"hero")
         tl.from(container.current,{backgroundColor:"white", duration:0.5},"hero")
     });

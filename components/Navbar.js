@@ -23,13 +23,14 @@ const Navbar = () => {
             delay: 0.5,
             stagger: 0.1,
             ease: "power2.inOut",
+            toggleActions: "play none none none",
         });
     });
 
     return (
         <nav ref={container} className="fixed top-0 left-0 w-full bg-white shadow-lg rounded-lg z-20">
             <div className="flex justify-between items-center py-4 px-10">
-                <div className="px:6 sm:px-8 md:px-14 lg:px-20">
+                <div className="items px:6 sm:px-8 md:px-14 lg:px-20">
                     <Link href="/"><img className='w-36 h-14 cursor-pointer' src='/logo1.png'></img></Link>
                 </div>
                 <div className="lg:hidden flex items-center">

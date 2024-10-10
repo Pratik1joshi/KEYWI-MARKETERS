@@ -17,9 +17,10 @@ const About = () => {
                 trigger: textRef.current,
                 start: 'top 65%',
                 end: 'top 0%',
-                // toggleActions: 'play none none none',
+                toggleActions: 'play none none none',
                 markers: false,
-                scrub:2
+                scrub:1,
+                once:true,
             },
         })
 
@@ -28,14 +29,17 @@ const About = () => {
             y:30,
             duration:0.8,
             delay:0.5,
-            ease:"power2.inOut"
+            ease:"power2.inOut",
+            toggleActions: "play none none none",
+            
         })
 
         tl2.from(textRef.current.querySelectorAll("img"),{
             opacity:0,
             y:80,
             duration:1,
-            ease:'power2.out'
+            ease:'power2.out',
+            toggleActions: 'play none none none',
         },"aboutSec")
 
         tl2.from(lines, {
@@ -44,13 +48,14 @@ const About = () => {
             y: 30,     // Move the text slightly up while fading in
             duration: 1,
             stagger: 0.2, // Stagger animation of each line
-            ease: 'power2.out'
+            ease: 'power2.out',
+            toggleActions: 'play none none none',
         },"aboutSec");
     })
 
     return (
         <section id='about' className="text-gray-800 body-font overflow-hidden">
-            <div ref={textRef} className="container px-5 py-24 mx-auto">
+            <div ref={textRef} className="container px-5 py-16 mx-auto">
                 <h1 className='lg:text-5xl font-bold md:text-5xl md:py-4 py-6 text-4xl lg:py-2 lg:px-28'>About Keywi <span className='text-[#51C4EE]'>Marketers</span></h1>
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
                     <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="/about.png" />
