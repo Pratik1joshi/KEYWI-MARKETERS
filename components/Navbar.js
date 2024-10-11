@@ -24,6 +24,7 @@ const Navbar = () => {
             stagger: 0.1,
             ease: "power2.inOut",
             toggleActions: "play none none none",
+            once:true,
         });
     });
 
