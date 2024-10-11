@@ -59,7 +59,7 @@ const About = () => {
                 <h1 className='lg:text-5xl font-bold md:text-5xl md:py-4 py-6 text-4xl lg:py-2 lg:px-28'>About Keywi <span className='text-[#51C4EE]'>Marketers</span></h1>
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
                     <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="/about.png" />
-                    <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                    <div className="lg:w-1/2 w-full lg:pl-10 text-xl lg:py-6 mt-6 lg:mt-0">
                         <p>
                             <span className="lines">Founded in 2024, Keywi Marketers is a client-focused marketing agency dedicated to delivering</span>
                             <span className="lines">personalized, results-driven solutions for businesses of all sizes. We offer a comprehensive</span>

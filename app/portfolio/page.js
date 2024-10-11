@@ -18,18 +18,6 @@ const page = () => {
     useGSAP(() => {
         const texts = textRef.current.querySelectorAll('.texts');
         const tl4 = gsap.timeline()
-        // const tl3 = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: divRef.current,
-        //         start: 'top 65%',
-        //         end: 'top 0%',
-        //         toggleActions: 'play none none none',
-        //         markers: true,
-        //         scrub: 1,
-        //         once: true,
-        //     },
-        // })
-
         tl4.from(textRef.current.querySelectorAll(".heading"), {
             opacity: 0,
             x: -200,
@@ -53,31 +41,50 @@ const page = () => {
             toggleActions: "play none none none",
 
         }, "whyus")
+
+        const divs = happyRef.current.querySelectorAll('.workDivs');
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: happyRef.current,
+                start: 'top 65%',
+                end: 'top 0%',
+                markers: false,
+                once:true,
+                // scrub: 2
+            },
+        })
+
+        tl2.from(happyRef.current.querySelectorAll(".ourworks"), {
+            opacity: 0,
+            y: 30,
+            duration: 0.2,
+            stagger:0.5,
+            ease: "power2.inOut"
+        })
+
+        tl2.from(divs, {
+            opacity: 0,
+            // x: -200,
+            y:30,
+            duration: 0.8,
+            stagger:0.4,
+            ease: 'power2.out'
+        })
+
+
     })
     useGSAP(() => {
-        // Function to create the counting animation
-
-
-        const animateValue = (happyRef, ref, start, end, duration) => {
-            // const tl3 = gsap.timeline({
-            //     scrollTrigger: {
-            //         trigger: happyRef,
-            //         start: 'top 80%',
-            //         end: "top 50%",
-            //         toggleActions: 'play none none none',
-            //         markers: true,
-            //         scrub: 1,
-            //         once: true,
-            //     },
-            // })
-            // tl3.from(happyRef.current.div, {
-            //     opacity: 0,
-            //     ease: 'power2.out',
-            //     y: 40,
-            //     duration: 0.5,
-            //     stagger: 1,
-            // })
-            gsap.fromTo(ref.current,
+        const animateValue = ( ref, start, end, duration) => {
+            const tl3 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ref.current,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none',
+                    markers: false,
+                    once: true,
+                },
+            })
+            tl3.fromTo(ref.current,
                 { innerText: start },
                 {
                     innerText: end,
@@ -97,10 +104,10 @@ const page = () => {
         };
 
         // Apply the animation to each stat
-        animateValue(happyRef, downloadRef, 0, 20, 1.5);
-        animateValue(happyRef, usersRef, 0, 19, 1.5);
-        animateValue(happyRef, filesRef, 0, 500, 2);
-        animateValue(happyRef, placesRef, 0, 300, 2);
+        animateValue(downloadRef, 0, 20, 1.5);
+        animateValue(usersRef, 0, 19, 1.5);
+        animateValue(filesRef, 0, 500, 2);
+        animateValue(placesRef, 0, 300, 2);
 
     });
 
@@ -111,11 +118,11 @@ const page = () => {
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
                     <img alt="ecommerce" className="whyus lg:w-1/2 w-4/5 lg:h-auto h-72 lg:-mt-10 object-cover object-center rounded" src="/whyus.png" />
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                        <h2 className='texts text-2xl font-bold sm:text-2xl py-10'>Why Keywi <span className='text-[#51C4EE]'>Marketers?</span></h2>
-                        <span className='texts'>Keywi Marketers is your trusted partner for tailored, results-driven marketing solutions.</span><span className='texts'> We offer a wide range of services, from web development to social media management and influencer marketing, all designed to meet your unique business goals.</span><span className='texts'> With flexible, budget-friendly packages, we deliver maximum value without compromising quality.</span><span className='texts'> At Keywi Marketers, we combine creativity and strategy to connect with your audience and drive real growth. Let us help you unlock new opportunities and elevate your brand.</span>
+                        <h2 className='texts text-3xl font-bold sm:text-2xl py-10'>Why Keywi <span className='text-[#51C4EE]'>Marketers?</span></h2>
+                        <span className='texts text-lg md:text-xl lg:text-xl'>Keywi Marketers is your trusted partner for tailored, results-driven marketing solutions.</span><span className='texts text-lg md:text-xl lg:text-xl'> We offer a wide range of services, from web development to social media management and influencer marketing, all designed to meet your unique business goals.</span><span className='texts text-lg md:text-xl lg:text-xl'> With flexible, budget-friendly packages, we deliver maximum value without compromising quality.</span><span className='texts text-lg md:text-xl lg:text-xl'> At Keywi Marketers, we combine creativity and strategy to connect with your audience and drive real growth. Let us help you unlock new opportunities and elevate your brand.</span>
                     </div>
                 </div>
-                <div ref={happyRef} className="happy flex flex-wrap -m-4 text-center md:px-8 px-4 lg:px-20">
+                <div className="happy flex flex-wrap -m-4 text-center md:px-8 px-4 lg:px-20">
                     <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
                         <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24" strokeWidth="2" fill="rgba(81,196,238,1)"><path d="M14.9968 2L21 8L21.0012 12.2606C20.4221 11.7806 19.7434 11.4178 19.0008 11.2074L19 9H14V4H5V20L10.0591 20.0009C10.1761 20.7365 10.4622 21.4172 10.8771 22.0006L3.9934 22C3.48412 22 3.06409 21.6171 3.00669 21.1239L3 21.0082V2.9918C3 2.49363 3.38689 2.06546 3.88533 2.00683L4.00221 2H14.9968ZM17.5 13C19.433 13 21 14.567 21 16.5L20.9985 16.6033C22.1531 16.9285 23 17.9903 23 19.25C23 20.7125 21.8583 21.9084 20.4175 21.995L20.25 22H14.75L14.5825 21.995C13.1417 21.9084 12 20.7125 12 19.25C12 17.99 12.8474 16.9279 14.0034 16.6025L14 16.5C14 14.567 15.567 13 17.5 13ZM17.5 15C16.769 15 16.1602 15.5229 16.027 16.215L16.0069 16.3555L16 16.5V18.12L14.5559 18.5256C14.1558 18.6328 13.9183 19.044 14.0256 19.4441C14.105 19.7405 14.3512 19.9476 14.6362 19.9915L14.7446 20.0002H20.2554C20.5846 19.998 20.8851 19.7775 20.9744 19.4441C21.0817 19.044 20.8442 18.6328 20.4441 18.5256L19.4322 18.2432L19 18.12V16.5L18.9931 16.3555C18.9204 15.5949 18.2797 15 17.5 15Z"></path></svg>
@@ -151,45 +158,45 @@ const page = () => {
                 </div>
             </div>
 
-            <section className="text-gray-600 body-font">
+            <section ref={happyRef} className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Works</h1>
-                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
+                        <h1 className="ourworks sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Works</h1>
+                        <p className="ourworks lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
                     </div>
                     <div className="flex flex-wrap -m-4">
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
-                            <div className="flex relative">
-                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/600x480"/>
+                        <div className="workDivs lg:w-1/3 sm:w-1/2 p-4">
+                            <div className="flex relative h-80"> 
+                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="/fresco.jpg"/>
                                     <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                        <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                        <h1 className="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
+                                        <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Marketing</h2>
+                                        <h1 className="title-font text-lg font-medium text-gray-900 mb-3">Fresco Himalayan</h1>
                                         <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                     </div>
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
-                            <div className="flex relative">
-                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/601x361"/>
+                        <div className="workDivs lg:w-1/3 sm:w-1/2 p-4">
+                            <div className="flex relative h-80">
+                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="/unclesbakery.jpg"/>
                                     <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                        <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                        <h1 className="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
+                                        <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Design</h2>
+                                        <h1 className="title-font text-lg font-medium text-gray-900 mb-3">Uncle's Bakery</h1>
                                         <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                     </div>
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
-                            <div className="flex relative">
-                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/603x363"/>
+                        <div className="workDivs lg:w-1/3 sm:w-1/2 p-4">
+                            <div className="flex relative h-80">
+                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="/nepalAki.jpg"/>
                                     <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                        <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                        <h1 className="title-font text-lg font-medium text-gray-900 mb-3">The 400 Blows</h1>
+                                        <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Website</h2>
+                                        <h1 className="title-font text-lg font-medium text-gray-900 mb-3">Cocina Mitho Chha</h1>
                                         <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                                     </div>
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
-                            <div className="flex relative">
+                        <div className="workDivs lg:w-1/3 sm:w-1/2 p-4">
+                            <div className="flex relative h-80">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/602x362"/>
                                     <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                                         <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
@@ -198,8 +205,8 @@ const page = () => {
                                     </div>
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
-                            <div className="flex relative">
+                        <div className="workDivs lg:w-1/3 sm:w-1/2 p-4">
+                            <div className="flex relative h-80">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/605x365"/>
                                     <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                                         <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
@@ -208,8 +215,8 @@ const page = () => {
                                     </div>
                             </div>
                         </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-4">
-                            <div className="flex relative">
+                        <div className="workDivs lg:w-1/3 sm:w-1/2 p-4">
+                            <div className="flex relative h-80">
                                 <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/606x366"/>
                                     <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                                         <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>

@@ -38,15 +38,6 @@ const Services = () => {
             stagger:2,
             ease: 'power2.out'
         })
-
-        // tl2.from(lines, {
-
-        //     opacity: 0,
-        //     y: 30,     // Move the text slightly up while fading in
-        //     duration: 1,
-        //     stagger: 0.2, // Stagger animation of each line
-        //     ease: 'power2.out'
-        // });
     })
 
     return (

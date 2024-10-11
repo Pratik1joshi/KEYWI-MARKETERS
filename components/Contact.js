@@ -132,8 +132,7 @@ const Contact = () => {
                             >
                                 {loading ? 'Sending...' : 'Send'}
                             </button>
-                            {success && <p className="text-green-500 mt-4">Your message has been sent!</p>}
-                            {error && <p className="text-red-500 mt-4">Failed to send message.</p>}
+                              
                         </div>
                     </form>
 

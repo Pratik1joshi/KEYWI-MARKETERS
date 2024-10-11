@@ -1,8 +1,62 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import './Footer.css'
 import Link from 'next/link'
 
 const Footer = () => {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError(false);
+        setSuccess(false);
+
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await res.json();
+            setLoading(false);
+
+            if (result.success) {
+                setSuccess(true);
+                // Remove success message after 3 seconds
+                setTimeout(() => setSuccess(false), 3000);
+            } else {
+                setError(true);
+                // Remove error message after 3 seconds
+                setTimeout(() => setError(false), 3000);
+            }
+        } catch (err) {
+            setLoading(false);
+            setError(true);
+            // Remove error message after 3 seconds
+            setTimeout(() => setError(false), 3000);
+        }
+    };
+
     return (
         <footer className="text-gray-600 body-font">
             {/* Newsletter Subscription Section */}
@@ -16,6 +70,9 @@ const Footer = () => {
                         <div className="relative w-full md:w-3/4 lg:w-2/3">
                             <input
                                 type="email"
+                                name='email'
+                                value={formData.email}
+                                onChange={handleChange}
                                 placeholder="Enter your email"
                                 className="border border-gray-300 rounded-md p-3 pl-10 w-full focus:outline-none focus:ring-2 focus:ring-blue-300"
                                 required
@@ -26,9 +83,12 @@ const Footer = () => {
                                 </svg>
                             </div>
                         </div>
-                        <button className="bg-[#51C4EE] text-white rounded-md px-6 py-3 mt-4 md:mt-0 md:ml-4 hover:bg-[#32b7e8] transition duration-300">
-                            Subscribe
+                        <button onClick={handleSubmit} className="bg-[#51C4EE] text-white rounded-md px-6 py-3 mt-4 md:mt-0 md:ml-4 hover:bg-[#32b7e8] transition duration-300" disabled={loading}
+                        >
+                            {loading ? 'Subscribing' : 'Subscribe'}
                         </button>
+                        {success && <p className="text-green-500 mt-4">You have been subscribed!</p>}
+                        {error && <p className="text-red-500 mt-4">Failed to Subscribe.</p>}
                     </div>
                 </div>
             </div>
@@ -111,7 +171,7 @@ const Footer = () => {
                             </li>
                         </nav>
                     </div>
-                    
+
                 </div>
             </div>
             <div className="bg-gray-100">

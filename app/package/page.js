@@ -83,7 +83,7 @@ const page = () => {
                                 <span>1 free photoshoot (except the ones mentioned above)</span>
                             </li>
                         </ul>
-                        <a href="#" className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-white border-2 border-transparent transform duration-500 hover:border-white hover:bg-transparent">
+                        <a href="#contact" className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-white border-2 border-transparent transform duration-500 hover:border-white hover:bg-transparent">
                             Get Started
                         </a>
                     </div>
@@ -117,7 +117,7 @@ const page = () => {
                                 <span>Standard support</span>
                             </li>
                         </ul>
-                        <a href="#" className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-white border-2 border-transparent transform duration-500 hover:border-white hover:bg-transparent">
+                        <a href="#contact" className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-white border-2 border-transparent transform duration-500 hover:border-white hover:bg-transparent">
                             Get Started
                         </a>
                     </div>
@@ -158,7 +158,7 @@ const page = () => {
                                 <span>Advanced analytics</span>
                             </li>
                         </ul>
-                        <a href="#" className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-white border-2 border-transparent transform duration-500 hover:border-white hover:bg-transparent">
+                        <a href="#contact" className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-white border-2 border-transparent transform duration-500 hover:border-white hover:bg-transparent">
                             Get Started
                         </a>
                     </div>
@@ -197,7 +197,7 @@ const page = () => {
                                 <span>Premium SLAs</span>
                             </li>
                         </ul>
-                        <a href="#" className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-white border-2 border-transparent transform duration-500 hover:border-white hover:bg-transparent">
+                        <a href="#contact" className="block w-full py-3 px-6 text-center rounded-md text-black font-medium bg-white border-2 border-transparent transform duration-500 hover:border-white hover:bg-transparent">
                             Get Started
                         </a>
                     </div>
