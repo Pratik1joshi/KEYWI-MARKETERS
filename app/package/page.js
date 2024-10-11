@@ -16,7 +16,7 @@ const pricingPlans = [
     },
     {
         title: "Basic",
-        price: "Rs 24000",
+        price: "24000",
         duration: "/mo",
         description: "Get started with our basic features.",
         features: [
@@ -137,7 +137,7 @@ const Page = () => {
                                 <p className="mt-4 text-gray-500">{plan.description}</p>
                             </div>
                             <div className="mb-8">
-                                <span className="text-5xl font-extrabold text-black">{plan.price}</span>
+                                <span className="text-5xl font-extrabold text-black">Rs. {plan.price}</span>
                                 {plan.duration && <span className="text-xl font-medium text-gray-500">{plan.duration}</span>}
                             </div>
                             <ul className="mb-8 space-y-4 text-gray-700">
