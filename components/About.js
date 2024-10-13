@@ -19,38 +19,36 @@ const About = () => {
                 end: 'top 0%',
                 toggleActions: 'play none none none',
                 markers: false,
-                scrub:1,
-                once:true,
+                scrub: 1,
+                once: true,
             },
         })
 
-        tl2.from(textRef.current.querySelectorAll("h1"),{
-            opacity:0,
-            y:30,
-            duration:0.8,
-            delay:0.5,
-            ease:"power2.inOut",
+        tl2.from(textRef.current.querySelectorAll("h1"), {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            delay: 0.5,
+            ease: "power2.inOut",
             toggleActions: "play none none none",
-            
         })
 
-        tl2.from(textRef.current.querySelectorAll("img"),{
-            opacity:0,
-            y:80,
-            duration:1,
-            ease:'power2.out',
+        tl2.from(textRef.current.querySelectorAll("img"), {
+            opacity: 0,
+            y: 80,
+            duration: 1,
+            ease: 'power2.out',
             toggleActions: 'play none none none',
-        },"aboutSec")
+        }, "aboutSec")
 
         tl2.from(lines, {
-            
             opacity: 0,
             y: 30,     // Move the text slightly up while fading in
             duration: 1,
             stagger: 0.2, // Stagger animation of each line
             ease: 'power2.out',
             toggleActions: 'play none none none',
-        },"aboutSec");
+        }, "aboutSec");
     })
 
     return (
@@ -69,7 +67,7 @@ const About = () => {
                             <span className="lines">blend creativity, technology, and strategic insights to help your brand thrive. At Keywi Marketers,</span>
                             <span className="lines">we pride ourselves on offering flexible, affordable packages designed to provide maximum value</span>
                             <span className="lines">without compromising quality.</span><br /><br />
-                            <span className="lines">Our company mottos, "Your Key to Nepal" and "Dream Big, Grow Big" with us, reflect our</span>
+                            <span className="lines">Our company mottos, &quot;Your Key to Nepal&quot; and &quot;Dream Big, Grow Big&quot; with us, reflect our</span>
                             <span className="lines">commitment to unlocking new opportunities for your business and empowering you to reach</span>
                             <span className="lines">your full potential. We work closely with our clients to create client-oriented strategies that</span>
                             <span className="lines">resonate with their audience, driving measurable growth and success.</span><br /><br />

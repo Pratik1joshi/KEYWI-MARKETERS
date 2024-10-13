@@ -85,7 +85,7 @@ const Contact = () => {
                 </div>
                 <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
                     <h2 className="text-gray-700 text-4xl sm:text-5xl lg:text-5xl mb-5 font-bold title-font">CONTACT <span className='text-[#51C4EE]'>US</span></h2>
-                    <p className="leading-relaxed mb-5 text-gray-600">Let's Talk</p>
+                    <p className="leading-relaxed mb-5 text-gray-600">Let&rsquo;s Talk</p>
 
                     <form onSubmit={handleSubmit}>
                         <div className="relative mb-4">
