@@ -32,7 +32,7 @@ const Navbar = () => {
         <nav ref={container} className="fixed top-0 left-0 w-full bg-white shadow-lg rounded-lg z-20">
             <div className="flex justify-between items-center py-4 px-10">
                 <div className="items px:6 sm:px-8 md:px-14 lg:px-20">
-                    <Link href="/"><img className='w-36 h-14 cursor-pointer' src='/logo1.png'></img></Link>
+                    <Link href="/"><img className='w-32 cursor-pointer' alt='logo' src='/logo1.png'></img></Link>
                 </div>
                 <div className="lg:hidden flex items-center">
                     <button onClick={toggleMenu}>

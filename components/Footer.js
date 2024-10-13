@@ -95,12 +95,12 @@ const Footer = () => {
 
             <div className="container px-20 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-col justify-around gap-8">
                 <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-                    <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <Link href="/" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                         <div className="text-3xl font-bold tracking-wider flex justify-center items-center gap-2">
                             <div>KEYWI</div>
                             <div className='text-[#51C4EE]'>MARKETERS</div>
                         </div>
-                    </a>
+                    </Link>
                     <div className='flex items-center gap-4 py-4'>
                         <span className='icon cursor-pointer transition-transform duration-500 ease-in-out transform hover:scale-125'>
                             <img src='/instagram-line.svg' width={25} alt="Instagram" />
@@ -138,16 +138,16 @@ const Footer = () => {
                         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Contact Us</h2>
                         <nav className="list-none mb-10">
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">keywimarketers@gmail.com</a>
+                                <span className="text-gray-600 hover:text-gray-800">keywimarketers@gmail.com</span>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">9801012409</a>
+                                <span className="text-gray-600 hover:text-gray-800">9801012409</span>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">9761619636</a>
+                                <span className="text-gray-600 hover:text-gray-800">9761619636</span>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Tridevi Sadak, Kathmandu 44600, Nepal</a>
+                                <span className="text-gray-600 hover:text-gray-800">Tridevi Sadak, Kathmandu 44600, Nepal</span>
                             </li>
                         </nav>
                     </div>
@@ -155,19 +155,19 @@ const Footer = () => {
                         <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Services</h2>
                         <nav className="list-none mb-10">
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Web Development</a>
+                                <Link href="/#services" className="text-gray-600 hover:text-gray-800">Web Development</Link>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Graphics Designing</a>
+                                <Link href="/#services"  className="text-gray-600 hover:text-gray-800">Graphics Designing</Link>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Digital Marketing</a>
+                                <Link href="/#services"  className="text-gray-600 hover:text-gray-800">Digital Marketing</Link>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Social Media Management</a>
+                                <Link href="/#services"  className="text-gray-600 hover:text-gray-800">Social Media Management</Link>
                             </li>
                             <li>
-                                <a className="text-gray-600 hover:text-gray-800">Photoshoots & Videoshoots</a>
+                                <Link href="/#services"  className="text-gray-600 hover:text-gray-800">Photoshoots & Videoshoots</Link>
                             </li>
                         </nav>
                     </div>
